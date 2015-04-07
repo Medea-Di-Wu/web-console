@@ -21,4 +21,7 @@ var replConsole = new REPLConsole({
   }
 });
 
-replConsole.install(consoleDiv);
+$( document ).ready(function() {
+  replConsole.install(consoleDiv);
+});
+
