@@ -96,9 +96,15 @@ function REPLConsole(config) {
 REPLConsole.prototype.install = function(container) {
   var _this = this;
 
+  console.log("Console Installing... ");
+  console.log(_this);
+
   document.onkeydown = function(ev) {
     if (_this.focused) { _this.onKeyDown(ev); }
   };
+
+  console.log("document.onkeydown overwritten");
+  console.log(document.onkeydown);
 
   document.onkeypress = function(ev) {
     if (_this.focused) { _this.onKeyPress(ev); }
@@ -271,6 +277,8 @@ REPLConsole.prototype.onNavigateHistory = function(offset) {
  * Handle control keys like up, down, left, right.
  */
 REPLConsole.prototype.onKeyDown = function(ev) {
+  console.log("REPLConsole.prototype.onKeyDown receivec " + ev.keyCode);
+
   switch (ev.keyCode) {
     case 13:
       // Enter key
