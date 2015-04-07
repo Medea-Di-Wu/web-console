@@ -95,6 +95,11 @@ function REPLConsole(config) {
 
 REPLConsole.prototype.install = function(container) {
   var _this = this;
+  
+  document.on('DOMChanged', function (event) {
+    console.log("DOM Change!!!!");
+    console.log(event);
+  });
 
   console.log("Console Installing... ");
   console.log(_this);
